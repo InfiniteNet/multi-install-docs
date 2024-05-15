@@ -1139,7 +1139,7 @@ criar_arquivo() {
     nome_credenciais
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
     #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-    read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+    read -p "Digite a Url do Portainer (ex: portainer.autombot.com.br): " PORTAINER_URL
     echo ""
 
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -1167,7 +1167,7 @@ verificar_campos() {
         nome_credenciais
         echo -e "\e[97mPasso$amarelo 1/3\e[0m"
         #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-        read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+        read -p "Digite a Url do Portainer (ex: portainer.autombot.com.br): " PORTAINER_URL
         echo ""
     
         echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -1187,7 +1187,7 @@ verificar_campos() {
         nome_credenciais
         echo -e "\e[97mPasso$amarelo 1/3\e[0m"
         #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-        read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+        read -p "Digite a Url do Portainer (ex: portainer.autombot.com.br): " PORTAINER_URL
         echo ""
     
         echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -1256,7 +1256,7 @@ verificar_token() {
                 nome_credenciais
                 echo -e "\e[97mPasso$amarelo 1/3\e[0m"
                 #echo -e "\e[97mObs: Coloque o https:// antes do link do portainer\e[0m"
-                read -p "Digite a Url do Portainer (ex: portainer.oriondesign.art.br): " PORTAINER_URL
+                read -p "Digite a Url do Portainer (ex: portainer.autombot.com.br): " PORTAINER_URL
                 echo ""
             
                 echo -e "\e[97mPasso$amarelo 2/3\e[0m"
@@ -3287,12 +3287,12 @@ preencha_as_info
 while true; do
 
 echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-echo -en "\e[33mDigite o endereço de Email (ex: contato@oriondesign.art.br): \e[0m" && read -r email_teste
+echo -en "\e[33mDigite o endereço de Email (ex: contato@autombot.com.br): \e[0m" && read -r email_teste
 echo ""
 
 echo -e "\e[97mPasso$amarelo 2/5\e[0m"
 echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-echo -en "\e[33mDigite o usuário de Email (ex: oriondesign ou contato@oriondesign.art.br): \e[0m" && read -r user_teste
+echo -en "\e[33mDigite o usuário de Email (ex: AutomBot ou contato@autombot.com.br): \e[0m" && read -r user_teste
 echo ""
 
 echo -e "\e[97mPasso$amarelo 3/5\e[0m"
@@ -3347,7 +3347,7 @@ sudo apt-get update > /dev/null 2>&1
 sudo apt-get install swaks -y > /dev/null 2>&1
 
 msg="Se você está lendo isso, o seu SMTP está funcionando =D.
-By: OrionDesign"
+By: AutomBot"
 
 if swaks --to "$email_teste" --from "$email_teste" --server "$host_teste" --port "$porta_teste" --auth LOGIN --auth-user "$user_teste" --auth-password "$senha_teste" --tls --body "$msg"; then
     sleep 2
@@ -3408,13 +3408,13 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Portainer (ex: portainer.oriondesign.art.br): \e[0m" && read -r url_portainer
+    echo -en "\e[33mDigite o Dominio para o Portainer (ex: portainer.autombot.com.br): \e[0m" && read -r url_portainer
     echo ""
 
     ## Pergunta o Nome do Servidor
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
     echo -e "$amarelo--> Não pode conter Espaços e/ou cartacteres especiais, exceto Underline_"
-    echo -en "\e[33mEscolha um nome para o seu servidor (ex: OrionDesign): \e[0m" && read -r nome_servidor
+    echo -en "\e[33mEscolha um nome para o seu servidor (ex: AutomBot): \e[0m" && read -r nome_servidor
     echo ""
     
     ## Pergunta o nome da Rede Interna
@@ -3425,7 +3425,7 @@ while true; do
     
     ## Pergunta o Email para informações sobre o certificado
     echo -e "\e[97mPasso$amarelo 4/4\e[0m"
-    echo -en "\e[33mDigite um endereço de Email válido (ex: contato@oriondesign.art.br): \e[0m" && read -r email_ssl
+    echo -en "\e[33mDigite um endereço de Email válido (ex: contato@autombot.com.br): \e[0m" && read -r email_ssl
     echo ""
 
     ## Limpa o termianl
@@ -3526,7 +3526,7 @@ Link do Portainer: $url_portainer
 Obrigado por utilizar nosso AutoInstalador.
 Caso esse conteudo foi util, não deixe de apoiar nosso projeto.
 
-pix@oriondesign.art.br
+pix@autombot.com.br
 
 Bebam água!
 EOL
@@ -3672,7 +3672,7 @@ services:
 ## --------------------------- AUTOMBOT --------------------------- ##
 
   traefik:
-    image: traefik:latest
+    image: traefik:v2.11.2
     command:
       - "--api.dashboard=true"
       - "--providers.docker.swarmMode=true"
@@ -4441,7 +4441,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot
+    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.autombot.com.br): \e[0m" && read -r url_chatwoot
     echo ""
     
     ## Pega o nome do dominio para ser o nome da empresa
@@ -4449,7 +4449,7 @@ while true; do
     
     ## Pergunta o email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_admin_chatwoot
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_admin_chatwoot
     echo ""
     
     ## Define o dominio SMTP com o dominio do email
@@ -4625,7 +4625,7 @@ services:
     
     environment:
       ## Qualquer Url com # no final
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
 
       ## Nome da Empresa
       - INSTALLATION_NAME=$nome_empresa_chatwoot
@@ -4723,7 +4723,7 @@ services:
 
     environment:
       ## Qualquer Url com # no final
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
 
       ## Nome da Empresa
       - INSTALLATION_NAME=$nome_empresa_chatwoot
@@ -4983,7 +4983,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot
+    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.autombot.com.br): \e[0m" && read -r url_chatwoot
     echo ""
     
     ## Pega o nome do dominio para ser o nome da empresa
@@ -4991,7 +4991,7 @@ while true; do
     
     ## Pergunta o email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_admin_chatwoot
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_admin_chatwoot
     echo ""
     
     ## Define o dominio SMTP com o dominio do email
@@ -5167,7 +5167,7 @@ services:
     
     environment:
       ## Qualquer Url com # no final
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
 
       ## Nome da Empresa
       - INSTALLATION_NAME=$nome_empresa_chatwoot
@@ -5265,7 +5265,7 @@ services:
 
     environment:
       ## Qualquer Url com # no final
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
 
       ## Nome da Empresa
       - INSTALLATION_NAME=$nome_empresa_chatwoot
@@ -5518,7 +5518,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.oriondesign.art.br): \e[0m" && read -r url_evolution
+    echo -en "\e[33mDigite o Dominio para a Evolution API (ex: api.autombot.com.br): \e[0m" && read -r url_evolution
     echo ""
 
     ## Limpa o terminal
@@ -5613,7 +5613,7 @@ services:
     - AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES=true
 
     ## Configurações
-    - CONFIG_SESSION_PHONE_CLIENT=OrionDesign ## Nome que aparece no celular
+    - CONFIG_SESSION_PHONE_CLIENT=AutomBot ## Nome que aparece no celular
     - CONFIG_SESSION_PHONE_NAME=chrome
 
     ## Sobre os QR-Codes
@@ -5702,13 +5702,13 @@ services:
         - node.role == manager
       labels:
       - traefik.enable=1
-      - traefik.http.routers.evolution_oriondesign.rule=Host(\`$url_evolution\`) ## Url da aplicação
-      - traefik.http.routers.evolution_oriondesign.entrypoints=websecure
-      - traefik.http.routers.evolution_oriondesign.priority=1
-      - traefik.http.routers.evolution_oriondesign.tls.certresolver=letsencryptresolver
-      - traefik.http.routers.evolution_oriondesign.service=evolution_oriondesign
-      - traefik.http.services.evolution_oriondesign.loadbalancer.server.port=8080
-      - traefik.http.services.evolution_oriondesign.loadbalancer.passHostHeader=1
+      - traefik.http.routers.evolution_AutomBot.rule=Host(\`$url_evolution\`) ## Url da aplicação
+      - traefik.http.routers.evolution_AutomBot.entrypoints=websecure
+      - traefik.http.routers.evolution_AutomBot.priority=1
+      - traefik.http.routers.evolution_AutomBot.tls.certresolver=letsencryptresolver
+      - traefik.http.routers.evolution_AutomBot.service=evolution_AutomBot
+      - traefik.http.services.evolution_AutomBot.loadbalancer.server.port=8080
+      - traefik.http.services.evolution_AutomBot.loadbalancer.passHostHeader=1
 
 ## --------------------------- AUTOMBOT --------------------------- ##
 
@@ -5927,7 +5927,7 @@ services:
     - AUTHENTICATION_EXPOSE_IN_FETCH_INSTANCES=true
 
     ## Configurações
-    - CONFIG_SESSION_PHONE_CLIENT=OrionDesign ## Nome que aparece no celular
+    - CONFIG_SESSION_PHONE_CLIENT=AutomBot ## Nome que aparece no celular
     - CONFIG_SESSION_PHONE_NAME=chrome
 
     ## Sobre os QR-Codes
@@ -6016,13 +6016,13 @@ services:
         - node.role == manager
       labels:
       - traefik.enable=1
-      - traefik.http.routers.evolution_oriondesign.rule=Host(\`$url_evolution\`) ## Url da aplicação
-      - traefik.http.routers.evolution_oriondesign.entrypoints=websecure
-      - traefik.http.routers.evolution_oriondesign.priority=1
-      - traefik.http.routers.evolution_oriondesign.tls.certresolver=letsencryptresolver
-      - traefik.http.routers.evolution_oriondesign.service=evolution_oriondesign
-      - traefik.http.services.evolution_oriondesign.loadbalancer.server.port=8080
-      - traefik.http.services.evolution_oriondesign.loadbalancer.passHostHeader=1
+      - traefik.http.routers.evolution_AutomBot.rule=Host(\`$url_evolution\`) ## Url da aplicação
+      - traefik.http.routers.evolution_AutomBot.entrypoints=websecure
+      - traefik.http.routers.evolution_AutomBot.priority=1
+      - traefik.http.routers.evolution_AutomBot.tls.certresolver=letsencryptresolver
+      - traefik.http.routers.evolution_AutomBot.service=evolution_AutomBot
+      - traefik.http.services.evolution_AutomBot.loadbalancer.server.port=8080
+      - traefik.http.services.evolution_AutomBot.loadbalancer.passHostHeader=1
 
 ## --------------------------- AUTOMBOT --------------------------- ##
 
@@ -6144,18 +6144,18 @@ while true; do
     
     ##Pergunta o Dominio do Minio
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o MinIO (ex: minio.oriondesign.art.br): \e[0m" && read -r url_minio
+    echo -en "\e[33mDigite o Dominio para o MinIO (ex: minio.autombot.com.br): \e[0m" && read -r url_minio
     echo ""
     
     ##Pergunta o Dominio para o S3 do Minio
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Minio S3 (ex: s3.oriondesign.art.br): \e[0m" && read -r url_s3
+    echo -en "\e[33mDigite o Dominio para o Minio S3 (ex: s3.autombot.com.br): \e[0m" && read -r url_s3
     echo ""
     
     ##Pergunta o Usuario para o Minio
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: \!#$ e/ou espaço"
-    echo -en "\e[33mDigite um usuario para o MinIO (ex: OrionDesign): \e[0m" && read -r user_minio
+    echo -en "\e[33mDigite um usuario para o MinIO (ex: AutomBot): \e[0m" && read -r user_minio
     echo ""
     
     ##Pergunta a Senha para o Minio
@@ -6402,12 +6402,12 @@ while true; do
 
     ##Pergunta o Dominio do Builder
     echo -e "\e[97mPasso$amarelo 1/10\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Builder do Typebot (ex: typebot.oriondesign.art.br): \e[0m" && read -r url_typebot
+    echo -en "\e[33mDigite o Dominio para o Builder do Typebot (ex: typebot.autombot.com.br): \e[0m" && read -r url_typebot
     echo ""
 
     ##Pergunta o Dominio do Viewer
     echo -e "\e[97mPasso$amarelo 2/10\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Viewer do Typebot (ex: bot.oriondesign.art.br): \e[0m" && read -r url_viewer
+    echo -en "\e[33mDigite o Dominio para o Viewer do Typebot (ex: bot.autombot.com.br): \e[0m" && read -r url_viewer
     echo ""
 
     ##Pergunta a versão da ferramenta
@@ -6417,13 +6417,13 @@ while true; do
 
     ##Pergunta o Email SMTP
     echo -e "\e[97mPasso$amarelo 4/10\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_typebot
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_typebot
     echo ""
 
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 5/10\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou contato@oriondesign.art.br): \e[0m" && read -r usuario_email_typebot
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: AutomBot ou contato@autombot.com.br): \e[0m" && read -r usuario_email_typebot
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -6841,12 +6841,12 @@ while true; do
 
     ##Pergunta o Dominio do N8N
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.oriondesign.art.br): \e[0m" && read -r url_editorn8n
+    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.autombot.com.br): \e[0m" && read -r url_editorn8n
     echo ""
     
     ##Pergunta o Dominio do Webhook
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.oriondesign.art.br): \e[0m" && read -r url_webhookn8n
+    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.autombot.com.br): \e[0m" && read -r url_webhookn8n
     echo ""
         
     ## Limpa o terminal
@@ -7250,7 +7250,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o Flowise (ex: flowise.oriondesign.art.br): \e[0m" && read -r url_flowise
+    echo -en "\e[33mDigite o dominio para o Flowise (ex: flowise.autombot.com.br): \e[0m" && read -r url_flowise
     echo ""
     
     ##Pergunta o Usuario para a ferramenta
@@ -7510,12 +7510,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o PgAdmin 4 (ex: pgadmin.oriondesign.art.br): \e[0m" && read -r url_PgAdmin_4
+    echo -en "\e[33mDigite o dominio para o PgAdmin 4 (ex: pgadmin.autombot.com.br): \e[0m" && read -r url_PgAdmin_4
     echo ""
     
     ##Pergunta o Email para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/3\e[0m"
-    echo -en "\e[33mDigite um email para o PgAdmin 4 (ex: contato@oriondesign.art.br): \e[0m" && read -r user_PgAdmin_4
+    echo -en "\e[33mDigite um email para o PgAdmin 4 (ex: contato@autombot.com.br): \e[0m" && read -r user_PgAdmin_4
     echo ""
     
     ##Pergunta a Senha para a ferramenta
@@ -7741,17 +7741,17 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o dominio para o Nocobase (ex: nocobase.oriondesign.art.br): \e[0m" && read -r url_nocobase
+    echo -en "\e[33mDigite o dominio para o Nocobase (ex: nocobase.autombot.com.br): \e[0m" && read -r url_nocobase
     echo ""
     
     ##Pergunta o Email para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
-    echo -en "\e[33mDigite um email para o Nocobase (ex: contato@oriondesign.art.br): \e[0m" && read -r mail_nocobase
+    echo -en "\e[33mDigite um email para o Nocobase (ex: contato@autombot.com.br): \e[0m" && read -r mail_nocobase
     echo ""
     
     ##Pergunta um Usuario para a ferramenta
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
-    echo -en "\e[33mDigite um nome de usuario para o Nocobase (ex: OrionDesign): \e[0m" && read -r user_nocobase
+    echo -en "\e[33mDigite um nome de usuario para o Nocobase (ex: AutomBot): \e[0m" && read -r user_nocobase
     echo ""
     
     ##Pergunta a Senha para a ferramenta
@@ -8024,7 +8024,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Botpress (ex: botpress.oriondesign.art.br): \e[0m" && read -r url_botpress
+    echo -en "\e[33mDigite o dominio para o Botpress (ex: botpress.autombot.com.br): \e[0m" && read -r url_botpress
     echo ""
     
     ## Limpa o terminal
@@ -8271,7 +8271,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o Wordpress (ex: oriondesign.art.br ou loja.oriondesign.art.br): \e[0m" && read -r url_wordpress
+    echo -en "\e[33mDigite o dominio para o Wordpress (ex: autombot.com.br ou loja.autombot.com.br): \e[0m" && read -r url_wordpress
     echo ""
     
     ##Pergunta o nome do site
@@ -8582,17 +8582,17 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/6\e[0m"
-    echo -en "\e[33mDigite o dominio para o Baserow (ex: baserow.oriondesign.art.br): \e[0m" && read -r url_baserow
+    echo -en "\e[33mDigite o dominio para o Baserow (ex: baserow.autombot.com.br): \e[0m" && read -r url_baserow
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/6\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r mail_baserow
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r mail_baserow
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 3/6\e[0m"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou contato@oriondesign.art.br): \e[0m" && read -r user_baserow
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: AutomBot ou contato@autombot.com.br): \e[0m" && read -r user_baserow
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -8901,7 +8901,7 @@ while true; do
     ## Pergunta o nome de usuario
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: @\!#$ e/ou espaço"
-    echo -en "\e[33mDigite o nome de usuario (ex: oriondesign): \e[0m" && read -r user_mongo
+    echo -en "\e[33mDigite o nome de usuario (ex: AutomBot): \e[0m" && read -r user_mongo
     echo ""
     
     ## Gera a senha aleatória
@@ -9126,12 +9126,12 @@ while true; do
 
     ## Pergunta o Dominio do RabbitMq
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o RabbitMQ (ex: rabbitmq.oriondesign.art.br): \e[0m" && read -r url_rabbitmq
+    echo -en "\e[33mDigite o dominio para o RabbitMQ (ex: rabbitmq.autombot.com.br): \e[0m" && read -r url_rabbitmq
     echo ""
     
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: @\!#$ e/ou espaço"
-    echo -en "\e[33mDigite o nome de usuario (ex: OrionDesign): \e[0m" && read -r user_rabbitmq
+    echo -en "\e[33mDigite o nome de usuario (ex: AutomBot): \e[0m" && read -r user_rabbitmq
     echo ""
     
     ## Gera a senha aleatória
@@ -9364,7 +9364,7 @@ while true; do
 
     ## Pergunta o Dominio do uptime kuma
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Uptime Kuma (ex: uptimekuma.oriondesign.art.br): \e[0m" && read -r url_uptimekuma
+    echo -en "\e[33mDigite o dominio para o Uptime Kuma (ex: uptimekuma.autombot.com.br): \e[0m" && read -r url_uptimekuma
     echo ""
     
     ## Limpa o terminal
@@ -9573,12 +9573,12 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o dominio para o Cal (ex: calcom.oriondesign.art.br): \e[0m" && read -r url_calcom
+    echo -en "\e[33mDigite o dominio para o Cal (ex: calcom.autombot.com.br): \e[0m" && read -r url_calcom
     echo ""
     
     ## Pergunta o email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_calcom
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_calcom
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -9873,18 +9873,18 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Mautic (ex: mautic.oriondesign.art.br): \e[0m" && read -r url_mautic
+    echo -en "\e[33mDigite o Dominio para o Mautic (ex: mautic.autombot.com.br): \e[0m" && read -r url_mautic
     echo ""
 
     ## Pergunta o usuario da ferramenta
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
     echo -e "$amarelo--> Sem caracteres especiais: \!#$ e/ou espaços"
-    echo -en "\e[33mDigite um usuario (ex: OrionDesign): \e[0m" && read -r user_mautic
+    echo -en "\e[33mDigite um usuario (ex: AutomBot): \e[0m" && read -r user_mautic
     echo ""
 
     ## Pergunta o email da ferramenta
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
-    echo -en "\e[33mDigite o Email de admin: (ex: contato@oriondesign.art.br): \e[0m" && read -r email_mautic
+    echo -en "\e[33mDigite o Email de admin: (ex: contato@autombot.com.br): \e[0m" && read -r email_mautic
     echo ""
     
     ## Pergunta o senha da ferramenta
@@ -10263,7 +10263,7 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o Appsmith (ex: appsmith.oriondesign.art.br): \e[0m" && read -r url_appsmith
+    echo -en "\e[33mDigite o dominio para o Appsmith (ex: appsmith.autombot.com.br): \e[0m" && read -r url_appsmith
     echo ""
     
     ## Limpa o terminal
@@ -10483,7 +10483,7 @@ while true; do
     ## Pergunta o Dominio da ferramenta
     read -r ip _ <<<$(hostname -I)
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o ip da vps (seu ip: $ip) ou dominio para Qdrant (ex: qdrant.oriondesign.art.br): \e[0m" && read -r ip_vps
+    echo -en "\e[33mDigite o ip da vps (seu ip: $ip) ou dominio para Qdrant (ex: qdrant.autombot.com.br): \e[0m" && read -r ip_vps
     echo ""
     
     ## Pergunta quandos nodes deseja
@@ -10716,13 +10716,13 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o Dominio para o WoofedCRM (ex: woofedcrm.oriondesign.art.br): \e[0m" && read -r url_woofed
+    echo -en "\e[33mDigite o Dominio para o WoofedCRM (ex: woofedcrm.autombot.com.br): \e[0m" && read -r url_woofed
     echo ""
 
     ## Pergunta o nome do Usuario do Motor
     echo -e "\e[97mPasso$amarelo 3/3\e[0m"
     echo -e "$amarelo--> Evite os caracteres especiais: @\!#$ e/ou espaço"
-    echo -en "\e[33mDigite o User do MOTOR (ex: oriondesign): \e[0m" && read -r email_admin_woofed
+    echo -en "\e[33mDigite o User do MOTOR (ex: AutomBot): \e[0m" && read -r email_admin_woofed
     echo ""
 
     ## Pergunta o nome do Senha do Motor
@@ -11201,12 +11201,12 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Formbricks (ex: formbricks.oriondesign.art.br): \e[0m" && read -r url_formbricks
+    echo -en "\e[33mDigite o Dominio para o Formbricks (ex: formbricks.autombot.com.br): \e[0m" && read -r url_formbricks
     echo ""
     
     ## Pergunta o Email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite um Email para o SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_formbricks
+    echo -en "\e[33mDigite um Email para o SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_formbricks
     echo ""
     
     ## Pergunta a Senha SMTP
@@ -11350,7 +11350,7 @@ services:
       - DATABASE_URL=postgresql://postgres:$senha_postgres@postgres:5432/formbricks
 
       ## Licença Enterprise ou Self-hosting
-      ## Solicitar licenta Self-hosting --> https://oriondesign.art.br/formbricks_licence/ <-- ##
+      ## Solicitar licenta Self-hosting --> https://autombot.com.br/formbricks_licence/ <-- ##
       - ENTERPRISE_LICENSE_KEY=
 
       ## Keys aleatórias 32 caracteres
@@ -11536,7 +11536,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o NocoDB (ex: nocodb.oriondesign.art.br): \e[0m" && read -r url_nocodb
+    echo -en "\e[33mDigite o dominio para o NocoDB (ex: nocodb.autombot.com.br): \e[0m" && read -r url_nocodb
     echo ""
     
     ## Limpa o terminal
@@ -11773,7 +11773,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Langfuse (ex: langfuse.oriondesign.art.br): \e[0m" && read -r url_langfuse
+    echo -en "\e[33mDigite o dominio para o Langfuse (ex: langfuse.autombot.com.br): \e[0m" && read -r url_langfuse
     echo ""
     
     ## Limpa o terminal
@@ -12021,7 +12021,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Metabase (ex: metabase.oriondesign.art.br): \e[0m" && read -r url_metabase
+    echo -en "\e[33mDigite o dominio para o Metabase (ex: metabase.autombot.com.br): \e[0m" && read -r url_metabase
     echo ""
     
     ## Limpa o terminal
@@ -12267,7 +12267,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Odoo (ex: odoo.oriondesign.art.br): \e[0m" && read -r url_odoo
+    echo -en "\e[33mDigite o dominio para o Odoo (ex: odoo.autombot.com.br): \e[0m" && read -r url_odoo
     echo ""
     
     ## Limpa o terminal
@@ -12521,7 +12521,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot
+    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.autombot.com.br): \e[0m" && read -r url_chatwoot
     echo ""
     
     ## Pega o nome do dominio para ser o nome da empresa
@@ -12529,7 +12529,7 @@ while true; do
     
     ## Pergunta o email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_admin_chatwoot
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_admin_chatwoot
     echo ""
     
     ## Define o dominio SMTP com o dominio do email
@@ -12696,7 +12696,7 @@ services:
     networks:
       - $nome_rede_interna ## Nome da rede interna
     environment:
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
       - INSTALLATION_NAME=$nome_empresa_chatwoot ## Nome da empresa
       - NODE_ENV=production
       - RAILS_ENV=production
@@ -12756,7 +12756,7 @@ services:
     networks:
       - $nome_rede_interna ## Nome da rede interna
     environment:
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
       - INSTALLATION_NAME=$nome_empresa_chatwoot ## Nome da empresa
       - NODE_ENV=production
       - RAILS_ENV=production
@@ -12979,7 +12979,7 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot
+    echo -en "\e[33mDigite o Dominio para o Chatwoot (ex: chatwoot.autombot.com.br): \e[0m" && read -r url_chatwoot
     echo ""
     
     ## Pega o nome do dominio para ser o nome da empresa
@@ -12987,7 +12987,7 @@ while true; do
     
     ## Pergunta o email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_admin_chatwoot
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_admin_chatwoot
     echo ""
     
     ## Define o dominio SMTP com o dominio do email
@@ -13163,7 +13163,7 @@ services:
     
     environment:
       ## Qualquer Url com # no final
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
 
       ## Nome da Empresa
       - INSTALLATION_NAME=$nome_empresa_chatwoot
@@ -13261,7 +13261,7 @@ services:
 
     environment:
       ## Qualquer Url com # no final
-      - CHATWOOT_HUB_URL=https://oriondesign.art.br/setup#
+      - CHATWOOT_HUB_URL=https://autombot.com.br/setup#
 
       ## Nome da Empresa
       - INSTALLATION_NAME=$nome_empresa_chatwoot
@@ -13495,12 +13495,12 @@ while true; do
 
     ##Pergunta o Dominio da UnoApi
     echo -e "\e[97mPasso$amarelo 1/11\e[0m"
-    echo -en "\e[33mDigite o Dominio para a Uno API (ex: unoapi.oriondesign.art.br): \e[0m" && read -r url_unoapi
+    echo -en "\e[33mDigite o Dominio para a Uno API (ex: unoapi.autombot.com.br): \e[0m" && read -r url_unoapi
     echo ""
 
     ##Pergunta o Dominio do Chatwoot
     echo -e "\e[97mPasso$amarelo 2/11\e[0m"
-    echo -en "\e[33mDigite o Dominio do Chatwoot já instalado (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r url_chatwoot_uno
+    echo -en "\e[33mDigite o Dominio do Chatwoot já instalado (ex: chatwoot.autombot.com.br): \e[0m" && read -r url_chatwoot_uno
     echo ""
 
     ##Pergunta o o token do usuario
@@ -13858,27 +13858,27 @@ while true; do
 
     ##Pergunta o Dominio do N8N
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.oriondesign.art.br): \e[0m" && read -r url_editorn8n
+    echo -en "\e[33mDigite o dominio para o N8N (ex: n8n.autombot.com.br): \e[0m" && read -r url_editorn8n
     echo ""
     
     ##Pergunta o Dominio do Webhook
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.oriondesign.art.br): \e[0m" && read -r url_webhookn8n
+    echo -en "\e[33mDigite o dominio para o Webhook do N8N (ex: webhook.autombot.com.br): \e[0m" && read -r url_webhookn8n
     echo ""
 
     ##Pergunta Dominio do Chatwoot
     echo -e "\e[97mPasso$amarelo 3/5\e[0m"
-    echo -en "\e[33mDigite o dominio do Chatwoot (ex: chatwoot.oriondesign.art.br): \e[0m" && read -r dominio_chatwoot
+    echo -en "\e[33mDigite o dominio do Chatwoot (ex: chatwoot.autombot.com.br): \e[0m" && read -r dominio_chatwoot
     echo ""
 
     ##Pergunta Dominio do Quepasa
     echo -e "\e[97mPasso$amarelo 4/5\e[0m"
-    echo -en "\e[33mDigite o dominio do Quepasa (ex: quepasa.oriondesign.art.br): \e[0m" && read -r dominio_quepasa
+    echo -en "\e[33mDigite o dominio do Quepasa (ex: quepasa.autombot.com.br): \e[0m" && read -r dominio_quepasa
     echo ""
 
     ##Pergunta Email do Quepasa
     echo -e "\e[97mPasso$amarelo 5/5\e[0m"
-    echo -en "\e[33mDigite o email do Quepasa (ex: contato@oriondesign.art.br): \e[0m" && read -r email_quepasa
+    echo -en "\e[33mDigite o email do Quepasa (ex: contato@autombot.com.br): \e[0m" && read -r email_quepasa
     echo ""
     
     ## Limpa o terminal
@@ -13989,7 +13989,7 @@ services:
 ## --------------------------- AUTOMBOT --------------------------- ##
 
   n8n_quepasa_editor:
-    image: oriondesign/quepasa:8aca0a3031f0 ## Versão do N8N
+    image: AutomBot/quepasa:8aca0a3031f0 ## Versão do N8N
     command: start
 
     volumes:
@@ -14066,7 +14066,7 @@ services:
 ## --------------------------- AUTOMBOT --------------------------- ##
 
   n8n_quepasa_webhook:
-    image: oriondesign/n8n-quepasa:latest ## Versão do N8N
+    image: AutomBot/n8n-quepasa:latest ## Versão do N8N
     command: webhook
 
     volumes:
@@ -14143,7 +14143,7 @@ services:
 ## --------------------------- AUTOMBOT --------------------------- ##
 
   n8n_quepasa_worker:
-    image: oriondesign/n8n-quepasa:latest ## Versão do N8N
+    image: AutomBot/n8n-quepasa:latest ## Versão do N8N
     command: worker --concurrency=10
 
     volumes:
@@ -14326,12 +14326,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o Quepasa (ex: quepasa.oriondesign.art.br): \e[0m" && read -r url_quepasa
+    echo -en "\e[33mDigite o dominio para o Quepasa (ex: quepasa.autombot.com.br): \e[0m" && read -r url_quepasa
     echo ""
 
     ##Pergunta o email para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
-    echo -en "\e[33mDigite o email para o Quepasa (ex: contato@oriondesign.art.br): \e[0m" && read -r email_quepasa
+    echo -en "\e[33mDigite o email para o Quepasa (ex: contato@autombot.com.br): \e[0m" && read -r email_quepasa
     echo ""
     
     ## Limpa o terminal
@@ -14402,7 +14402,7 @@ services:
 ## --------------------------- AUTOMBOT --------------------------- ##
 
   quepasa:
-    image: oriondesign/quepasa:latest
+    image: AutomBot/quepasa:latest
 
     volumes:
       - quepasa_data:/opt/quepasa
@@ -14420,7 +14420,7 @@ services:
       - EMAIL=$email_quepasa
 
       ## Titulo no celular
-      - APP_TITLE=OrionDesign
+      - APP_TITLE=AutomBot
 
       ## TimeZone
       - TZ=America/Sao_Paulo
@@ -14580,13 +14580,13 @@ while true; do
 
     ##Pergunta o Dominio do Dify AI
     echo -e "\e[97mPasso$amarelo 1/9\e[0m"
-    echo -en "\e[33mDigite o dominio para o Dify AI (ex: dify.oriondesign.art.br): \e[0m" && read -r url_dify
+    echo -en "\e[33mDigite o dominio para o Dify AI (ex: dify.autombot.com.br): \e[0m" && read -r url_dify
     echo ""
 
     ##Pergunta o Dominio do Qdrant
     read -r ip _ <<<$(hostname -I)
     echo -e "\e[97mPasso$amarelo 2/9\e[0m"
-    echo -en "\e[33mDigite o dominio do Qdrant (ex: http://$ip  ou http://qdrant.oriondesign.art.br): \e[0m" && read -r url_quedrant
+    echo -en "\e[33mDigite o dominio do Qdrant (ex: http://$ip  ou http://qdrant.autombot.com.br): \e[0m" && read -r url_quedrant
     echo ""
 
     ##Pergunta a Api Key do Qdrant
@@ -14597,7 +14597,7 @@ while true; do
 
     ##Pergunta o Email SMTP
     echo -e "\e[97mPasso$amarelo 4/9\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_dify
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_dify
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -15139,12 +15139,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o WebUI Ollama (ex: ollama.oriondesign.art.br): \e[0m" && read -r url_ollama
+    echo -en "\e[33mDigite o dominio para o WebUI Ollama (ex: ollama.autombot.com.br): \e[0m" && read -r url_ollama
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/2\e[0m"
-    echo -en "\e[33mDigite o dominio para a API Ollama (ex: apiollama.oriondesign.art.br): \e[0m" && read -r url_apiollama
+    echo -en "\e[33mDigite o dominio para a API Ollama (ex: apiollama.autombot.com.br): \e[0m" && read -r url_apiollama
     echo ""
     
     ## Limpa o terminal
@@ -15426,12 +15426,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/7\e[0m"
-    echo -en "\e[33mDigite o dominio para o Affine (ex: affine.oriondesign.art.br): \e[0m" && read -r url_affine
+    echo -en "\e[33mDigite o dominio para o Affine (ex: affine.autombot.com.br): \e[0m" && read -r url_affine
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/7\e[0m"
-    echo -en "\e[33mDigite o Email de Admin (ex: contato@oriondesign.art.br): \e[0m" && read -r email_affine
+    echo -en "\e[33mDigite o Email de Admin (ex: contato@autombot.com.br): \e[0m" && read -r email_affine
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -15442,7 +15442,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 4/7\e[0m"
-    echo -en "\e[33mDigite a Email SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_smtp_affine
+    echo -en "\e[33mDigite a Email SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_smtp_affine
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -15755,12 +15755,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o dominio para o Docuseal (ex: docuseal.oriondesign.art.br): \e[0m" && read -r url_docuseal
+    echo -en "\e[33mDigite o dominio para o Docuseal (ex: docuseal.autombot.com.br): \e[0m" && read -r url_docuseal
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite a Email SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_smtp_docuseal
+    echo -en "\e[33mDigite a Email SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_smtp_docuseal
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -16046,12 +16046,12 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/9\e[0m"
-    echo -en "\e[33mDigite o dominio para o Directus (ex: directus.oriondesign.art.br): \e[0m" && read -r url_directus
+    echo -en "\e[33mDigite o dominio para o Directus (ex: directus.autombot.com.br): \e[0m" && read -r url_directus
     echo ""
 
      ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 2/9\e[0m"
-    echo -en "\e[33mDigite a Email de Admin (ex: contato@oriondesign.art.br): \e[0m" && read -r email_directus
+    echo -en "\e[33mDigite a Email de Admin (ex: contato@autombot.com.br): \e[0m" && read -r email_directus
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -16062,7 +16062,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 4/9\e[0m"
-    echo -en "\e[33mDigite a Email SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_smtp_directus
+    echo -en "\e[33mDigite a Email SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_smtp_directus
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -16430,12 +16430,12 @@ while true; do
 
     ## Pergunta o Dominio da ferramenta
     echo -e "\e[97mPasso$amarelo 1/5\e[0m"
-    echo -en "\e[33mDigite o Dominio para o VaultWarden (ex: vaultwarden.oriondesign.art.br): \e[0m" && read -r url_vaultwarden
+    echo -en "\e[33mDigite o Dominio para o VaultWarden (ex: vaultwarden.autombot.com.br): \e[0m" && read -r url_vaultwarden
     echo ""
     
     ## Pergunta o Email SMTP
     echo -e "\e[97mPasso$amarelo 2/5\e[0m"
-    echo -en "\e[33mDigite um Email para o SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_vaultwarden
+    echo -en "\e[33mDigite um Email para o SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_vaultwarden
     echo ""
     
     ## Pergunta a Senha SMTP
@@ -16702,22 +16702,22 @@ while true; do
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 1/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Grafana (ex: grafana.oriondesign.art.br): \e[0m" && read -r url_grafana
+    echo -en "\e[33mDigite o Dominio para o Grafana (ex: grafana.autombot.com.br): \e[0m" && read -r url_grafana
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 2/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Prometheus (ex: prometheus.oriondesign.art.br): \e[0m" && read -r url_prometheus
+    echo -en "\e[33mDigite o Dominio para o Prometheus (ex: prometheus.autombot.com.br): \e[0m" && read -r url_prometheus
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 3/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o cAdvisor (ex: cadvisor.oriondesign.art.br): \e[0m" && read -r url_cadvisor
+    echo -en "\e[33mDigite o Dominio para o cAdvisor (ex: cadvisor.autombot.com.br): \e[0m" && read -r url_cadvisor
     echo ""
 
     ##Pergunta o Dominio para aplicação
     echo -e "\e[97mPasso$amarelo 4/4\e[0m"
-    echo -en "\e[33mDigite o Dominio para o NodeExporter (ex: node.oriondesign.art.br): \e[0m" && read -r url_nodeexporter
+    echo -en "\e[33mDigite o Dominio para o NodeExporter (ex: node.autombot.com.br): \e[0m" && read -r url_nodeexporter
     echo ""
 
     ## Limpa o terminal
@@ -16792,7 +16792,7 @@ sleep 1
 mkdir blablabla
 cd blablabla
 
-git clone https://github.com/oriondesign2015/SetupOrion.git > /dev/null 2>&1
+git clone https://github.com/AutomBot2015/SetupOrion.git > /dev/null 2>&1
 
 sudo mv /root/blablabla/SetupOrion/Extras/Grafana/monitor-orion /opt
 
@@ -17152,7 +17152,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/3\e[0m"
-    echo -en "\e[33mDigite o dominio para o NextCloud (ex: nextcloud.oriondesign.art.br): \e[0m" && read -r url_nextcloud
+    echo -en "\e[33mDigite o dominio para o NextCloud (ex: nextcloud.autombot.com.br): \e[0m" && read -r url_nextcloud
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -17439,7 +17439,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/1\e[0m"
-    echo -en "\e[33mDigite o dominio para o Strapi (ex: strapi.oriondesign.art.br): \e[0m" && read -r url_strapi
+    echo -en "\e[33mDigite o dominio para o Strapi (ex: strapi.autombot.com.br): \e[0m" && read -r url_strapi
     echo ""
     
     ## Limpa o terminal
@@ -17692,7 +17692,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     echo -e "\e[97mPasso$amarelo 1/2\e[0m"
-    echo -en "\e[33mDigite o dominio para o PhpMyAdmin (ex: phpmyadmin.oriondesign.art.br): \e[0m" && read -r url_phpmyadmin
+    echo -en "\e[33mDigite o dominio para o PhpMyAdmin (ex: phpmyadmin.autombot.com.br): \e[0m" && read -r url_phpmyadmin
     echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -17702,7 +17702,7 @@ while true; do
 
     ##Pergunta o Dominio para a ferramenta
     #echo -e "\e[97mPasso$amarelo 4/4\e[0m"
-    #echo -en "\e[33mDigite o Usuario MySQL  (ex: oriondesign): \e[0m" && read -r user_phpmyadmin
+    #echo -en "\e[33mDigite o Usuario MySQL  (ex: AutomBot): \e[0m" && read -r user_phpmyadmin
     #echo ""
 
     ##Pergunta o Dominio para a ferramenta
@@ -18034,12 +18034,12 @@ while true; do
 
     ##Pergunta o Dominio do Builder
     echo -e "\e[97mPasso$amarelo 1/10\e[0m"
-    echo -en "\e[33mDigite o Dominio para o Supabase (ex: supabase.oriondesign.art.br): \e[0m" && read -r url_supabase
+    echo -en "\e[33mDigite o Dominio para o Supabase (ex: supabase.autombot.com.br): \e[0m" && read -r url_supabase
     echo ""
 
     ##Pergunta o Dominio do Viewer
     echo -e "\e[97mPasso$amarelo 2/10\e[0m"
-    echo -en "\e[33mDigite o Usuario para o Supabase (ex: OrionDesign): \e[0m" && read -r user_supabase
+    echo -en "\e[33mDigite o Usuario para o Supabase (ex: AutomBot): \e[0m" && read -r user_supabase
     echo ""
 
     ##Pergunta a versão da ferramenta
@@ -18050,13 +18050,13 @@ while true; do
 
     ##Pergunta o Email SMTP
     echo -e "\e[97mPasso$amarelo 4/10\e[0m"
-    echo -en "\e[33mDigite o Email para SMTP (ex: contato@oriondesign.art.br): \e[0m" && read -r email_supabase
+    echo -en "\e[33mDigite o Email para SMTP (ex: contato@autombot.com.br): \e[0m" && read -r email_supabase
     echo ""
 
     ##Pergunta o usuário do Email SMTP
     echo -e "\e[97mPasso$amarelo 5/10\e[0m"
     echo -e "$amarelo--> Caso não tiver um usuario do email, use o proprio email abaixo"
-    echo -en "\e[33mDigite o Usuário para SMTP (ex: oriondesign ou contato@oriondesign.art.br): \e[0m" && read -r usuario_email_supabase
+    echo -en "\e[33mDigite o Usuário para SMTP (ex: AutomBot ou contato@autombot.com.br): \e[0m" && read -r usuario_email_supabase
     echo ""
     
     ## Pergunta a senha do SMTP
@@ -18319,7 +18319,7 @@ services:
       - POSTGRES_PASSWORD=$Senha_Postgres ## Senha do Postgres #OK
 
       ## Branding
-      - DEFAULT_ORGANIZATION_NAME=OrionDesign ## Nome da Empresa
+      - DEFAULT_ORGANIZATION_NAME=AutomBot ## Nome da Empresa
       - DEFAULT_PROJECT_NAME=SetupOrion ## Nome do Projeto
 
       ## Urls
@@ -19000,28 +19000,28 @@ chatwoot.mail() {
     fi
     
     # Baixa os novos arquivos
-    wget -O confirmation_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
+    wget -O confirmation_instructions.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "5/9 - [ OK ]"
     else
         echo "5/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O password_change.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
+    wget -O password_change.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "6/9 - [ OK ]"
     else
         echo "6/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O reset_password_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
+    wget -O reset_password_instructions.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "7/9 - [ OK ]"
     else
         echo "7/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O unlock_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
+    wget -O unlock_instructions.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "8/9 - [ OK ]"
     else
@@ -19091,28 +19091,28 @@ chatwoot.n.mail() {
     fi
     
     # Baixa os novos arquivos
-    wget -O confirmation_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
+    wget -O confirmation_instructions.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/confirmation_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "5/9 - [ OK ]"
     else
         echo "5/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O password_change.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
+    wget -O password_change.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/password_change.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "6/9 - [ OK ]"
     else
         echo "6/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O reset_password_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
+    wget -O reset_password_instructions.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/reset_password_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "7/9 - [ OK ]"
     else
         echo "7/9 - [ OFF ]"
         echo "Não foi possivel baixar email."
     fi
-    wget -O unlock_instructions.html.erb https://github.com/oriondesign2015/SetupOrion/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
+    wget -O unlock_instructions.html.erb https://github.com/AutomBot2015/SetupOrion/raw/main/Extras/Chatwoot/emails/unlock_instructions.html.erb > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "8/9 - [ OK ]"
     else
@@ -19164,13 +19164,13 @@ while true; do
 
             # Baixando workflows
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/ChatwootProfileUpdate.json"
-            wget "https://raw.githubusercontent.com/oriondesign2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/ChatwootToQuepasa.json"
+            wget "https://raw.githubusercontent.com/AutomBot2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/ChatwootToQuepasa.json"
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/ChatwootToQuepasaGreetings.json"
-            wget "https://raw.githubusercontent.com/oriondesign2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/PostToChatwoot.json"
-            wget "https://raw.githubusercontent.com/oriondesign2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/QuepasaAutomatic.json"
+            wget "https://raw.githubusercontent.com/AutomBot2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/PostToChatwoot.json"
+            wget "https://raw.githubusercontent.com/AutomBot2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/QuepasaAutomatic.json"
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/QuepasaChatControl.json"
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/QuepasaInboxControl.json"
-            wget "https://raw.githubusercontent.com/oriondesign2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/QuepasaQrcode.json"
+            wget "https://raw.githubusercontent.com/AutomBot2015/SetupOrion/main/Extras/Quepasa/workflows_n8n/QuepasaQrcode.json"
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/QuepasaToChatwoot.json"
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/GetChatwootContacts.json"
             wget "https://raw.githubusercontent.com/nocodeleaks/quepasa/main/extra/n8n%2Bchatwoot/PostToWebCallBack.json"
