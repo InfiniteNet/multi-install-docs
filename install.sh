@@ -3672,7 +3672,7 @@ services:
 ## --------------------------- AUTOMBOT --------------------------- ##
 
   traefik:
-    image: traefik:v2.11.2
+    image: traefik:latest
     command:
       - "--api.dashboard=true"
       - "--providers.docker.swarmMode=true"
